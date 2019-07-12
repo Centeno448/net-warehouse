@@ -15,7 +15,7 @@ namespace NET_Warehouse.Models
 
         [DisplayName("Nombre")]
         [Required(ErrorMessage = "Ingrese el nombre del producto")]
-        public int NombreProd { get; set; }
+        public string NombreProd { get; set; }
 
         [DisplayName("Precio")]
         [Required(ErrorMessage = "Ingrese un precio")]

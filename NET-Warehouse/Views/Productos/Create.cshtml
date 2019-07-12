@@ -1,19 +1,18 @@
 ﻿@model NET_Warehouse.Models.Producto
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Producto - Crear";
 }
 
-<h2>Create</h2>
+<br />
+<h3>Nuevo Producto</h3>
+<hr />
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Producto</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.NombreProd, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -34,13 +33,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DescripcionProd, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DescripcionProd, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.DescripcionProd, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DescripcionProd, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BodegaID, "BodegaID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BodegaID, "Bodega", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("BodegaID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BodegaID, "", new { @class = "text-danger" })
@@ -49,14 +48,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Ir Atrás", "Index")
 </div>
 
 @section Scripts {
