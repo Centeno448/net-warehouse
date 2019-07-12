@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NET_Warehouse.Models.Bodega>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreBodega)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaisBodega)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreBodega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaisBodega)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BodegaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BodegaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BodegaID })
+        </td>
+    </tr>
+}
+
+</table>
