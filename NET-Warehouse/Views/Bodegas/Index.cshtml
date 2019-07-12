@@ -1,24 +1,25 @@
 ﻿@model IEnumerable<NET_Warehouse.Models.Bodega>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Bodegas";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreBodega)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaisBodega)
-        </th>
-        <th></th>
-    </tr>
+<br />
+<h2>Bodegas</h2>
+<h5>@Html.ActionLink("Añadir Bodega", "Create")</h5>
+<br />
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreBodega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaisBodega)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    
 
 @foreach (var item in Model) {
     <tr>
@@ -29,9 +30,8 @@
             @Html.DisplayFor(modelItem => item.PaisBodega)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BodegaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BodegaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BodegaID })
+            @Html.ActionLink("Actualizar", "Edit", new { id=item.BodegaID }, new { @class = "btn btn-info"}) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.BodegaID }, new { @class = "btn btn-danger"})
         </td>
     </tr>
 }

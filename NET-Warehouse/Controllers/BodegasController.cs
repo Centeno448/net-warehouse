@@ -38,6 +38,7 @@ namespace NET_Warehouse.Controllers
         // GET: Bodegas/Create
         public ActionResult Create()
         {
+            ViewBag.PaisBodega = new[] { "Ecuador", "Chile", "Colombia", "Venezuela", "Peru"};
             return View();
         }
 
@@ -70,6 +71,7 @@ namespace NET_Warehouse.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.PaisBodega = new[] { "Ecuador", "Chile", "Colombia", "Venezuela", "Peru" };
             return View(bodega);
         }
 
