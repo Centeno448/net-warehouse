@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NET_Warehouse.Models.Bodega>
+
+@{
+    ViewBag.Title = "Reporte";
+    var Dictionary = (Dictionary<int, decimal>)ViewBag.Bodegas;
+
+}
+<br />
+<div class="container text-center">
+    <h2>Reporte Bodegas</h2>
+    <br />
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    Nombre Bodega
+                </th>
+                <th>
+                    Total Precio en Productos
+                </th>
+            </tr>
+        </thead>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreBodega)
+                </td>
+                <td>
+                    @Dictionary[item.BodegaID]
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br>
+    <a href="@Url.Action("Index")" class="btn btn-info">Ir Atrás</a>
+</div>

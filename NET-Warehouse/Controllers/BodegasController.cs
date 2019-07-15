@@ -125,5 +125,24 @@ namespace NET_Warehouse.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Reporte()
+        {
+            var bodegas = db.Bodegas.ToList();
+            decimal total;
+            Dictionary<int, decimal> final = new Dictionary<int, decimal>();
+            foreach(var bod in bodegas)
+            {
+                total = 0;
+                foreach(var prod in bod.Productos)
+                {
+                    total += prod.PrecioProd;
+                }
+                final.Add(bod.BodegaID, total);
+            }
+
+            ViewBag.Bodegas = final;
+            return View(bodegas);
+        }
     }
 }
