@@ -1,6 +1,6 @@
 # net-warehouse
 
-Simple web app example 2.
+Simple web app example in .NET.
 
 CRUD de Bodega CRUD de Productos
 
