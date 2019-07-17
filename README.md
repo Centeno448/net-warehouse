@@ -1,4 +1,4 @@
-# net-warehouse
+# Centeno Net Warehouse
 
 Simple web app example in .NET.
 
